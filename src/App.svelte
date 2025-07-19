@@ -25,6 +25,25 @@
     <ZenGarden />
     <footer class="text-center mt-12 text-stone-400 text-sm">
       <p>Click stones for water sounds • Hover plants for nature sounds • Draw in the sand to create patterns</p>
+    <p class="mt-2">
+      Made with <span class="text-red-500">❤️</span> by
+      <a
+        href="https://github.com/leecheeyong"
+        target="_blank"
+        class="text-gray-700 hover:underline"
+      >
+        Chee Yong Lee
+      </a>
+    </p>
+    <p class="mt-1">
+      Project available as open source under the terms of
+      <a
+        href="https://github.com/leecheeyong/ZenGarden/blob/main/LICENSE"
+        target="_blank"
+        class="text-gray-700 hover:underline"
+        >MIT License</a
+      >
+    </p>
     </footer>
   </div>
 </main>
