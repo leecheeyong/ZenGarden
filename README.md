@@ -7,9 +7,9 @@ A modern, interactive, and relaxing peaceful garden built with Svelte for people
 ## Features
 
 - Draw patterns in the sand with your mouse or touch
-- Drag and interact with animated stones and plants
-- Ambient sound toggle (UI only, ready for audio integration)
-- Random animal visitors (butterfly, koi, bird)
+- Interact with animated stones and plants
+- Ambient sound toggle
+- Random animal visitors
 - Breathing guide for relaxation
 - Fetches a new quote from an API
 
