@@ -27,26 +27,18 @@
     color: Math.random() > 0.5 ? 'bg-blue-400/40' : 'bg-pink-400/40'
   }));
 
-  let quotes = [
-    "Peace comes from within. Do not seek it without.",
-    "Let go, or be dragged.",
-    "The quieter you become, the more you can hear.",
-    "Nature does not hurry, yet everything is accomplished.",
-    "To a mind that is still, the whole universe surrenders.",
-    "Flow with whatever may happen and let your mind be free.",
-    "Sitting quietly, doing nothing, spring comes, and the grass grows by itself."
-  ];
-  let zenQuote = quotes[Math.floor(Math.random() * quotes.length)];
-  function refreshQuote() {
-    let newQuote;
-    do {
-      newQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    } while (newQuote === zenQuote);
-    zenQuote = newQuote;
-  }
+  let zenQuote = '';
 
-  function resetGarden() {
-    window.location.reload();
+  onMount(async () => {
+    const res = await fetch('https://leecheeyong.vercel.app/quote');
+    const data = await res.json();
+    zenQuote = data.content;
+  });
+
+  async function refreshQuote() {
+    const res = await fetch('https://leecheeyong.vercel.app/quote');
+    const data = await res.json();
+    zenQuote = data.content;
   }
 
   let showAnimal = false;
@@ -120,6 +112,7 @@
     <div class="absolute inset-0 rounded-2xl md:rounded-3xl bg-gradient-to-br from-blue-900/80 via-blue-950/60 to-gray-900/80 blur-2xl opacity-90 pointer-events-none z-0 animate-gradient-move border-2 md:border-4 border-blue-400/30 animate-border-glow"></div>
     <div class="relative zen-shadow-lg rounded-2xl md:rounded-3xl overflow-hidden mb-6 md:mb-8 bg-blue-950/80 backdrop-blur-2xl border border-blue-200/40 shadow-2xl">
       <SandArea />
+      <img src="/grass.png" alt="grass" class="absolute right-1 -translate-x-1 bottom-0 z-0 select-none pointer-events-none animate-grass-sway" style="width: 100vw; max-width: 420px; height: auto; opacity: 0.85; filter: blur(0.5px);" />
       {#each stones as stone (stone.id)}
         <div 
           class="absolute z-10 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 hover:scale-110 hover:drop-shadow-2xl"
@@ -146,16 +139,6 @@
     </div>
   </div>
   <div class="fixed bottom-4 right-4 flex flex-col gap-2 md:gap-4 z-50">
-    <button on:click={toggleMusic} class="glass rounded-full p-2 md:p-3 shadow-lg bg-gradient-to-br from-green-400/60 to-blue-500/60 text-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 backdrop-blur border border-green-200/40">
-      {#if musicOn}
-        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19V6l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-      {:else}
-        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19V6l12-2v13"/><circle cx="6" cy="18" r="3"/></svg>
-      {/if}
-    </button>
-    <button on:click={showBreathingGuide} class="glass rounded-full p-2 md:p-3 shadow-lg bg-gradient-to-br from-blue-400/60 to-pink-500/60 text-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 backdrop-blur border border-blue-200/40">
-      <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/></svg>
-    </button>
     <button on:click={surpriseMe} class="glass rounded-full p-2 md:p-3 shadow-lg bg-gradient-to-br from-yellow-400/60 to-pink-500/60 text-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 backdrop-blur border border-yellow-200/40">
       <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
     </button>

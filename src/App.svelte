@@ -11,6 +11,9 @@
 
 <main class="min-h-screen bg-gradient-to-br from-slate-50 to-stone-100 font-zen">
   <div class="container mx-auto px-4 py-8">
+       <div class="flex justify-center mb-6">
+      <img src="/logo.png" alt="Zen Garden Logo" class="h-20 md:h-28 w-auto drop-shadow-xl rounded-full bg-white/60 p-2 border border-stone-200/60" />
+    </div>
     <header class="text-center mb-12">
       <h1 class="text-4xl md:text-5xl font-light text-stone-700 mb-4 tracking-wide">
         Zen Garden

@@ -5,7 +5,6 @@
   export let sound = 'water'
   
   let isPressed = false
-  // Random rotation for realism
   let rotation = (Math.random() * 8 - 4).toFixed(2)
   
   const sizeClasses = {
@@ -30,20 +29,17 @@
   style="transform: rotate({rotation}deg);"
 >
   <div class="w-full h-full rounded-full bg-gradient-to-br from-stone-400 to-stone-700 zen-shadow-lg relative overflow-hidden">
-    <!-- Realistic stone texture SVG overlay -->
     <svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" viewBox="0 0 40 30" fill="none"><ellipse cx="20" cy="15" rx="18" ry="13" fill="url(#stoneGrad)"/><defs><radialGradient id="stoneGrad" cx="0.5" cy="0.5" r="0.7"><stop offset="0%" stop-color="#fff" stop-opacity="0.2"/><stop offset="100%" stop-color="#000" stop-opacity="0.1"/></radialGradient></defs></svg>
     <div class="absolute inset-0 opacity-30">
       <div class="w-full h-full bg-gradient-to-tr from-transparent via-white to-transparent opacity-40"></div>
     </div>
     <div class="absolute top-1 left-1 w-1/3 h-1/3 bg-white opacity-20 rounded-full blur-sm"></div>
-    <!-- Ripple animation -->
     {#if isPressed}
       <span class="absolute inset-0 flex items-center justify-center pointer-events-none">
         <span class="stone-ripple"></span>
       </span>
     {/if}
   </div>
-  <!-- Fun animated shadow/glow -->
   <span class="stone-glow"></span>
 </button>
 
