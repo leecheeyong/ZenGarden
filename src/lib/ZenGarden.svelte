@@ -112,7 +112,7 @@
     <div class="absolute inset-0 rounded-2xl md:rounded-3xl bg-gradient-to-br from-blue-900/80 via-blue-950/60 to-gray-900/80 blur-2xl opacity-90 pointer-events-none z-0 animate-gradient-move border-2 md:border-4 border-blue-400/30 animate-border-glow"></div>
     <div class="relative zen-shadow-lg rounded-2xl md:rounded-3xl overflow-hidden mb-6 md:mb-8 bg-blue-950/80 backdrop-blur-2xl border border-blue-200/40 shadow-2xl">
       <SandArea />
-      <img src="/grass.png" alt="grass" class="absolute right-1 -translate-x-1 bottom-0 z-0 select-none pointer-events-none animate-grass-sway" style="width: 100vw; max-width: 420px; height: auto; opacity: 0.85; filter: blur(0.5px);" />
+      <img src="./grass.png" alt="grass" class="absolute right-1 -translate-x-1 bottom-0 z-0 select-none pointer-events-none animate-grass-sway" style="width: 100vw; max-width: 420px; height: auto; opacity: 0.85; filter: blur(0.5px);" />
       {#each stones as stone (stone.id)}
         <div 
           class="absolute z-10 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 hover:scale-110 hover:drop-shadow-2xl"
@@ -135,7 +135,7 @@
           />
         </div>
       {/each}
-      <img src="/grass.png" alt="grass" class="absolute left-1/2 -translate-x-1/2 bottom-0 z-0 select-none pointer-events-none animate-grass-sway" style="width: 100vw; max-width: 420px; height: auto; opacity: 0.85; filter: blur(0.5px);" />
+      <img src="./grass.png" alt="grass" class="absolute left-1/2 -translate-x-1/2 bottom-0 z-0 select-none pointer-events-none animate-grass-sway" style="width: 100vw; max-width: 420px; height: auto; opacity: 0.85; filter: blur(0.5px);" />
     </div>
   </div>
   <div class="fixed bottom-4 right-4 flex flex-col gap-2 md:gap-4 z-50">
